@@ -1,0 +1,21 @@
+<div class="d-flex flex-wrap justify-content-center p-1" *ngIf=" album">
+
+    <div class="d-flex justify-content-between align-items-center w-100 px-5 flex-wrap">
+        <div class="d-flex align-items-center">
+            <h4 class="pr-2">{{album.nome}}</h4>
+            <p-button icon=" pi pi-star" styleClass="p-button-outlined"></p-button>
+        </div>
+
+        <p-button icon="pi pi-search"></p-button>
+
+    </div>
+    <div class="d-flex flex-wrap justify-content-center p-1 w-100" *ngIf="album">
+        <div *ngFor="let foto of album.fotosPaginadas; let index = index" class="" key="index">
+            <img [src]="foto.thumbnailUrl" [alt]="foto.title" title="{{foto.title}}" style="cursor: pointer"
+                (click)=" abrirFoto(index,album.id)" />
+        </div>
+    </div>
+    <p-paginator [first]="first1" [rows]="9" [totalRecords]="album.totalFotos" (onPageChange)="onPageChange1($event)"
+        [showJumpToPageDropdown]="true" [showFirstLastIcon]="false" [showPageLinks]="false"></p-paginator>
+
+</div>

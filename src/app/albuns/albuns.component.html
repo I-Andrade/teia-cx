@@ -1,0 +1,20 @@
+<ng-container *ngIf="!carregando">
+    <div *ngFor="let album of albuns">
+
+        <app-album [album]="album" (abriuFoto)="imageClick($event)"></app-album>
+        <p-divider type="dashed"></p-divider>
+
+    </div>
+
+    <p-galleria *ngIf="albumAtivo" [value]="albumAtivo.fotos" [(visible)]="displayCustom" [(activeIndex)]="activeIndex"
+        [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '600px' }" [numVisible]="5"
+        [circular]="true" [fullScreen]="true" [showItemNavigators]="true" [showThumbnails]="false">
+        <ng-template pTemplate="item" let-foto>
+            <img [src]="foto.url" style="width: 100%; display: block;" />
+        </ng-template>
+    </p-galleria>
+
+</ng-container>
+
+
+<p-progressSpinner *ngIf="carregando" ariaLabel="loading"></p-progressSpinner>

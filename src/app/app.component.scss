@@ -1,0 +1,16 @@
+.pagina_inicial {
+  justify-content: center;
+  display: flex !important;
+  flex-flow: row wrap;
+}
+
+:host ::ng-deep {
+  .dock-window {
+    width: 100%;
+    height: 6rem;
+  }
+
+  .p-dock {
+    z-index: 1000;
+  }
+}
