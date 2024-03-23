@@ -4,21 +4,22 @@ import { AlbunsComponent } from './albuns/albuns.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { DockModule } from 'primeng/dock';
-import { MenuItem } from 'primeng/api';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './home/home.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    MenuComponent,
+    HomeComponent,
+    AlbunsComponent,
     RouterOutlet,
     HttpClientModule,
-    AlbunsComponent,
     CommonModule,
-    DockModule,
     ProgressSpinnerModule,
     IconFieldModule,
     InputIconModule,
@@ -28,22 +29,5 @@ import { InputIconModule } from 'primeng/inputicon';
 })
 export class AppComponent {
   title = 'teia-cx';
-  items: MenuItem[] = [
-    {
-      label: 'Finder',
-      icon: 'https://primefaces.org/cdn/primeng/images/dock/finder.svg',
-    },
-    {
-      label: 'App Store',
-      icon: 'https://primefaces.org/cdn/primeng/images/dock/appstore.svg',
-    },
-    {
-      label: 'Photos',
-      icon: 'https://primefaces.org/cdn/primeng/images/dock/photos.svg',
-    },
-    {
-      label: 'Trash',
-      icon: 'https://primefaces.org/cdn/primeng/images/dock/trash.png',
-    },
-  ];
+  mostrarGaleria = false;
 }

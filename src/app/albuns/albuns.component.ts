@@ -33,6 +33,7 @@ export class AlbunsComponent {
   public albumAtivo?: Album;
   public carregando = true;
   displayCustom: boolean = false;
+  displayTable: boolean = false;
 
   activeIndex: number = 0;
   responsiveOptions: any[] = [
