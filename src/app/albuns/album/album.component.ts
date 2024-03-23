@@ -22,7 +22,6 @@ export class AlbumComponent {
   loading = false;
 
   onPageChange(event: any) {
-    console.log(event);
     this.loading = true;
     this.first = event.first;
     this.rows = event.rows;
