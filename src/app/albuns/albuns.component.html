@@ -18,7 +18,8 @@
 
     </ng-container>
 
-
-    <p-progressSpinner *ngIf="carregando" ariaLabel="loading"></p-progressSpinner>
+    <div *ngIf="carregando" class="mt-5">
+        <p-progressSpinner ariaLabel="loading"></p-progressSpinner>
+    </div>
 
 </div>

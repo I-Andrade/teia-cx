@@ -3,11 +3,12 @@ import { Album } from '../../models/album';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { PaginatorModule } from 'primeng/paginator';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-album',
   standalone: true,
-  imports: [CommonModule, ButtonModule, PaginatorModule],
+  imports: [CommonModule, ButtonModule, PaginatorModule, DialogModule],
   templateUrl: './album.component.html',
   styleUrl: './album.component.scss',
 })
