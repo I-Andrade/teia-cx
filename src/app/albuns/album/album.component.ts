@@ -15,28 +15,28 @@ export class AlbumComponent {
   @Input() album?: Album;
   @Output() abriuFoto: EventEmitter<any> = new EventEmitter();
 
-  abrirFoto(index: number, albumId: number) {
-    this.abriuFoto.emit({
-      index: index,
-      albumId: albumId,
-    });
+  // Paginação do álbum
+  first: number = 0;
+  rows: number = 9;
+  loading = false;
+
+  onPageChange(event: any) {
+    console.log(event);
+    this.loading = true;
+    this.first = event.first;
+    this.rows = event.rows;
+    if (this.album)
+      this.album.fotosPaginadas = this.album?.fotos.slice(
+        this.first,
+        this.first + this.rows
+      );
+    this.loading = false;
   }
 
-  first1: number = 0;
-
-  rows1: number = 10;
-  totalRecords: number = 120;
-
-  options = [
-    { label: 5, value: 5 },
-    { label: 10, value: 10 },
-    { label: 20, value: 20 },
-    { label: 120, value: 120 },
-  ];
-
-  onPageChange1(event: any) {
-    console.log(event);
-    this.first1 = event.first;
-    this.rows1 = event.rows;
+  abrirFoto(index: number, albumId: number) {
+    this.abriuFoto.emit({
+      index: this.first + index,
+      albumId: albumId,
+    });
   }
 }

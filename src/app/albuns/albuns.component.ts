@@ -12,13 +12,6 @@ import { ButtonModule } from 'primeng/button';
 import { AlbumComponent } from './album/album.component';
 import { DividerModule } from 'primeng/divider';
 
-interface PageEvent {
-  first: number;
-  rows: number;
-  page: number;
-  pageCount: number;
-}
-
 @Component({
   selector: 'app-albuns',
   standalone: true,
